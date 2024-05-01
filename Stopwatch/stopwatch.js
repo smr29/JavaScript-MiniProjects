@@ -3,8 +3,8 @@ const startButton = document.querySelector('.start-button')
 const pauseButton = document.querySelector('.pause-button')
 const resetButton = document.querySelector('.reset-button')
 const lightModeButton = document.querySelector('.mode-button')
-const body = document.body
 const img = document.querySelector('.mode-img')
+const body = document.body
 
 let startTime = 0
 let elapsedTime = 0
@@ -15,25 +15,28 @@ let hrs = 0
 let mins = 0
 let secs = 0
 let mil = 0
-console.log(Date.now())
+
+//start button functionality
 startButton.addEventListener('click', () => {
+    //starting the timer
     if(paused === true){
         paused = false
+        startButton.innerHTML = 'Stop'
         startTime = Date.now() - elapsedTime
         intervalID = setInterval(() => {
             updateTime()
         }, 1)
     }
-})
-
-pauseButton.addEventListener('click', () => {
-    if(!paused){
+    //pausing the timer
+    else if(!paused){
         paused = true
+        startButton.innerHTML = 'Start'
         elapsedTime = Date.now() - startTime
         clearInterval(intervalID)
     }
 })
 
+//reset button functionality
 resetButton.addEventListener('click', () => {
     paused = true
     clearInterval(intervalID)
@@ -45,8 +48,10 @@ resetButton.addEventListener('click', () => {
     secs = 0
     mil = 0
     timeDisplay.innerHTML = '00:00:00:00'
+    startButton.innerHTML = 'Start'
 })
 
+//time updation and display
 function updateTime(){
     elapsedTime = Date.now() - startTime;
     mil = Math.floor((elapsedTime%1000)/10).toString().padStart(2, "0")
@@ -57,6 +62,7 @@ function updateTime(){
     timeDisplay.textContent = `${hrs}:${mins}:${secs}:${mil}`
 }
 
+//dark mode functionality
 lightModeButton.addEventListener('click', () => {
     if(body.classList.contains('dark-mode')){  
         img.src = 'images/sun.png'
