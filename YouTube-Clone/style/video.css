@@ -1,0 +1,117 @@
+.thumbnail{
+    width: 100%;
+}
+.video-title{
+    margin-top:0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 12px;
+}
+.video-info-grid{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+.profile-picture {
+    width: 36px;
+    border-radius: 100%;
+}
+.profile-picture-container{
+    width: 36px;
+    border-radius: 100%;
+    position: relative;
+}
+.profile-picture-tooltip{
+    width: 50px;
+    border-radius: 100%;
+}
+.thumbnail-row{
+    margin-bottom: 12px;
+    position: relative;
+}
+.video-author, 
+.video-stats{
+    font-size: 12px;
+    color: #606060;
+}
+.video-author{
+    margin-bottom: 4px;
+}
+.video-grid {
+    font-family: Roboto, Arial; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 40px;
+} 
+@media (max-width: 750px){
+    .video-grid{
+        grid-template-columns: 1fr 1fr;
+    } 
+    .video-title{
+        font-size: 16px;
+        line-height: 24px;
+    }   
+} 
+@media (min-width:751px) and (max-width: 1199px){
+    .video-grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 1200px){
+    .video-grid{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }    
+}
+@media (min-width: 1000px){
+    .video-author, 
+    .video-stats{
+        font-size: 14px;
+        color: #606060;
+    }
+}
+.video-time{
+    padding: 4px 4px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    position: absolute;
+    right: 4px;
+    bottom: 7px;
+    border-radius: 2px;
+}
+.channel-tooltip{
+    position: absolute;
+    font-family: Roboto, Arial;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    padding: 12px 12px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 2px rgb(195, 195, 195);
+    top: 43px;
+    z-index: 400;
+    transition: opacity 0.3s;
+    opacity: 0;
+    pointer-events: none;
+}
+.profile-picture-container:hover .channel-tooltip{
+    opacity: 100;
+}
+.channel-tooltip img{
+    margin-right: 6px;
+}
+.channel-info{
+    display: flex;
+    flex-direction: column;
+}
+.channel-name{
+    font-weight: bold;
+
+}
+.subscriber-info{
+    color: rgb(0, 0, 0);
+}

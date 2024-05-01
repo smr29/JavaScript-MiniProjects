@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <p class="js-equation equation"></p>
+
+    <div>
+        <div>
+            <button class="normal-button" onclick="updateCalculation('1')">1</button>
+            <button class="normal-button" onclick="updateCalculation('2')">2</button>
+            <button class="normal-button" onclick="updateCalculation('3')">3</button>
+            <button class="orange-button" onclick="updateCalculation('+')">+</button>
+        </div>
+        <div>
+            <button class="normal-button" onclick="updateCalculation('4')">4</button>
+            <button class="normal-button" onclick="updateCalculation('5')">5</button>
+            <button class="normal-button" onclick="updateCalculation('6')">6</button>
+            <button class="orange-button" onclick="updateCalculation('-')">-</button>
+        </div>
+        <div>
+            <button class="normal-button" onclick="updateCalculation('7')">7</button>
+            <button class="normal-button" onclick="updateCalculation('8')">8</button>
+            <button class="normal-button" onclick="updateCalculation('9')">9</button>
+            <button class="orange-button" onclick="updateCalculation('*')">*</button>
+        </div>
+        <div>
+            <button class="normal-button" onclick="updateCalculation('0')">0</button>
+            <button class="normal-button" onclick="updateCalculation('.')">.</button>
+            <button class="normal-button" onclick="calculations()">=</button>
+            <button class="orange-button" onclick="updateCalculation('/')">/</button>
+        </div>
+    </div>
+    <div>
+        <button class="clear-button" onclick="clearEquation()">Clear</button>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
