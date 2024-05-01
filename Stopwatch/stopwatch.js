@@ -2,6 +2,9 @@ const timeDisplay = document.querySelector('.time-display')
 const startButton = document.querySelector('.start-button')
 const pauseButton = document.querySelector('.pause-button')
 const resetButton = document.querySelector('.reset-button')
+const lightModeButton = document.querySelector('.mode-button')
+const body = document.body
+const img = document.querySelector('.mode-img')
 
 let startTime = 0
 let elapsedTime = 0
@@ -54,7 +57,16 @@ function updateTime(){
     timeDisplay.textContent = `${hrs}:${mins}:${secs}:${mil}`
 }
 
-
+lightModeButton.addEventListener('click', () => {
+    if(body.classList.contains('dark-mode')){  
+        img.src = 'images/sun.png'
+        body.classList.remove('dark-mode')    
+    }
+    else {
+        img.src = 'images/moon.png'
+        body.classList.add('dark-mode')  
+    }
+})
 
 
 

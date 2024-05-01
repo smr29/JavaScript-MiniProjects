@@ -37,4 +37,26 @@ body{
     margin-right: auto;
 }
 
+.mode-img{
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+}
 
+.mode-button{
+    background-color: white;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+body.dark-mode{
+    background-color: rgb(30, 29, 29);
+    color: white;
+}
+
+body.dark-mode .time-container{
+    border-color: white;
+}
